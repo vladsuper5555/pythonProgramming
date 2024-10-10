@@ -1,8 +1,6 @@
 import math
-
+import re
 def problema1(numbers):
-    if not numbers:
-        return None
     gcd = numbers[0]
     for num in numbers[1:]:
         gcd = math.gcd(gcd, num)
@@ -19,7 +17,7 @@ def problema4(camel_case_str):
     snake_case = ''
     for char in camel_case_str:
         if char.isupper():
-            if snake_case: 
+            if len(snake_case) != 0: 
                 snake_case += '_'
             snake_case += char.lower()
         else:
