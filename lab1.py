@@ -44,7 +44,7 @@ def problema7(number):
 def problema8(text):
     if not text:
         return 0
-    words = text.split(' ')
+    words = text.split()
     return len(words)
 
 def main():
