@@ -28,13 +28,23 @@ def problema2(lista):
 def problema3(dictionary1, dictionary2):
     if type(dictionary1) != type(dictionary2):
         return False
-    
-    if type(dictionary2) != 'Object': 
-        # we want to do a normal compare either for sets or for lists
-        # for now we compare them using == 
-        return dictionary1 == dictionary2
+    if not isinstance(dictionary1, dict):
+        # we try to process as list else it means they are normal values (int) and we can compare normally
+        try:
 
-    if type(dictionary2) == 'Object':
+            dictionary1 = list(dictionary1)
+            dictionary2 = list(dictionary2)
+
+            if len(dictionary1) != len(dictionary2):
+                return False
+
+            for index, value in enumerate(dictionary1):
+                if dictionary1[index] != dictionary2[index]:
+                    return False
+        except: 
+            return dictionary2 == dictionary1
+
+    if isinstance(dictionary1, dict):
         for key in dictionary1.keys():
             if not key in dictionary2:
                 return False
@@ -58,13 +68,10 @@ def problema5(rules, d):
         if len(value) == 0:
             continue
         rule = rules_dict[key]
-        print(rule)
         try:
-            print(rule[0], len(rule[0]))
             index1 = value.index(rule[0], 0, len(rule[0]))
             index2 = value.index(rule[1], 1, len(value) - len(rule[1]) - 1)
             index3 = value.index(rule[2], len(value) - len(rule[2]), len(value))
-            print(index1, index2, index3)
         except:
             return False
     return True
@@ -76,7 +83,6 @@ def problema7(*sets):
     dict = {}
     for index1, value in enumerate(sets):
         for index2, value in enumerate(sets):
-            print(index1, index2)
             if index1 < index2:
                 set1 = sets[index1]
                 set2 = sets[index2]
