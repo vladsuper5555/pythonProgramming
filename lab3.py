@@ -1,19 +1,9 @@
 import math
 import copy
 
-
 def problema1(listA, listB):
     setA, setB = set(listA), set(listB)
     return [setA & setB, setA | setB, setA - setB, setB - setA]
-
-
-
-def isPrime(n):
-    for i in range(2, int(math.sqrt(n)) + 1):
-        if n % i == 0:
-            return False
-    return True
-
 
 def problema2(lista):
     dictionary = {}
@@ -106,31 +96,31 @@ def problema9(*list, **dict):
     
 if __name__ == "__main__":
     # Test for problema1
-    print(problema1([1, 2, 3], [2, 3, 4]))  # Expected: [{2, 3}, {1, 2, 3, 4}, {1}, {4}]
+    print('1.', problema1([1, 2, 3], [2, 3, 4]))  # Expected: [{2, 3}, {1, 2, 3, 4}, {1}, {4}]
 
     # Test for problema2
-    print(problema2("Ana has apples."))  
+    print('2.', problema2("Ana has apples."))  
     # Expected: {'A': 1, 'n': 1, 'a': 3, ' ': 2, 'h': 1, 's': 2, 'p': 2, 'l': 1, 'e': 1, '.': 1}
 
     # Test for problema3
     d1 = {'a': 1, 'b': {'c': 3, 'd': [1, 2, 3]}}
     d2 = {'a': 1, 'b': {'c': 3, 'd': [1, 2, 3]}}
-    print(problema3(d1, d2))  # Expected: True
+    print('3.', problema3(d1, d2))  # Expected: True
 
     # Test for problema4
-    print(problema4("a", "Hello there", href="http://python.org", _class="my-link", id="someid"))
+    print('4.', problema4("a", "Hello there", href="http://python.org", _class="my-link", id="someid"))
     # Expected: '<a href="http://python.org" _class="my-link" id="someid">Hello there</a>'
 
     # Test for problema5
     rules = {("key1", "", "inside", ""), ("key2", "start", "something", "winter")}
     dictionary = {"key1": "come inside, it's too cold out", "key2": "start something in winter", "key3": "asdoinasdl"}
-    print(problema5(rules, dictionary))  # Expected: True
+    print('5.', problema5(rules, dictionary))  # Expected: True
 
     # Test for problema6
-    print(problema6([1, 2, 3, 2, 4, 4, 5]))  # Expected: (5, 2)
+    print('6.', problema6([1, 2, 3, 2, 4, 4, 5]))  # Expected: (5, 2)
 
     # Test for problema7
-    print(problema7({1, 2}, {2, 3}))  
+    print('7.', problema7({1, 2}, {2, 3}))  
     # Expected: {
     #    "{1, 2} | {2, 3}": {1, 2, 3},
     #    "{1, 2} & {2, 3}": {2},
@@ -140,7 +130,7 @@ if __name__ == "__main__":
 
     # Test for problema8
     mapping = {'start': 'a', 'a': '6', '6': 'z', 'z': '2', '2': '2'}
-    print(problema8(mapping))  # Expected: ['a', '6', 'z', '2']
+    print('8.', problema8(mapping))  # Expected: ['a', '6', 'z', '2']
 
     # Test for problema9
-    print(problema9(1, 2, 3, 4, x=1, y=2, z=3, w=5))  # Expected: 3
+    print('9.', problema9(1, 2, 3, 4, x=1, y=2, z=3, w=5))  # Expected: 3

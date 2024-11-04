@@ -56,7 +56,7 @@ def problema6(*lists, number):
                 counts[element] += 1
     answer = []
     for element in counts:
-        if counts[element] == 2:
+        if counts[element] == number:
             answer.append(element)
     return answer
 
@@ -86,7 +86,6 @@ def problema8(x=1, _list=[], flag=True):
     responses = []
     for element in _list:
         responses.append([])
-        print(element)
         for letter in element:
             if ord(letter) % x == 0 and flag:
                 responses[len(responses) - 1].append(letter)
